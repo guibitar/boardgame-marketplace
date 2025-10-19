@@ -16,7 +16,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=["*"],  # Permitir todas as origens em desenvolvimento
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -37,10 +37,14 @@ async def health_check():
     return {"status": "healthy"}
 
 
-# Import routers (to be created)
-# from app.api import auth, users, collections, sale_lists, orders
+# Import routers
+from app.api import auth
 
-# app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+# Include routers
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+
+# To be created:
+# from app.api import users, collections, sale_lists, orders
 # app.include_router(users.router, prefix="/api/users", tags=["users"])
 # app.include_router(collections.router, prefix="/api/collections", tags=["collections"])
 # app.include_router(sale_lists.router, prefix="/api/sale-lists", tags=["sale-lists"])
