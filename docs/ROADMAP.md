@@ -11,6 +11,8 @@
 - [ ] CRUD de usuários
 - [ ] Páginas de login/registro
 
+**Nota**: Este é um projeto solo com assistência de IA. Os prazos são estimativas e podem variar conforme sua disponibilidade.
+
 ### Sprint 2: Coleção de Jogos (2 semanas)
 - [ ] Modelo de dados de coleção
 - [ ] CRUD de coleção

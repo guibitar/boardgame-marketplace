@@ -238,7 +238,7 @@ curl http://localhost:8000/health
 - Mobile app
 - Analytics avançado
 
-## 📞 Contato e Suporte
+## 📞 Suporte e Desenvolvimento
 
 ### Documentação
 - Consulte a pasta `docs/` para documentação completa
@@ -249,6 +249,7 @@ curl http://localhost:8000/health
 - Siga o `docs/ROADMAP.md`
 - Use as convenções em `docs/GIT_SETUP.md`
 - Teste regularmente
+- **Nota**: Este é um projeto solo com assistência de IA 🤖
 
 ## 🎲 Conclusão
 

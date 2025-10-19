@@ -95,7 +95,9 @@ cd ../../docs
 
 ---
 
-## 📅 Próximos 7 Dias
+## 📅 Próximos 7 Dias (Estimativa)
+
+**Nota**: Este é um projeto solo com assistência de IA. Os prazos são flexíveis e podem variar conforme sua disponibilidade.
 
 ### Dia 1-2: Autenticação
 - [ ] Criar modelo User

@@ -100,15 +100,15 @@ Consulte a pasta `docs/` para documentação completa:
 
 ## 🤝 Contribuindo
 
-Este é um projeto privado em desenvolvimento.
+Este é um projeto privado em desenvolvimento solo com assistência de IA.
 
 ## 📄 Licença
 
 Proprietário - Todos os direitos reservados
 
-## 👥 Equipe
+## 👤 Desenvolvedor
 
-Em desenvolvimento...
+Desenvolvido por você com assistência de IA 🤖
 
 ---
 

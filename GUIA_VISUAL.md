@@ -329,6 +329,8 @@ git pull
 
 ## 📊 Status do Projeto
 
+**Nota**: Este é um projeto solo com assistência de IA. Desenvolvimento em andamento.
+
 ### ✅ Concluído
 - [x] Planejamento
 - [x] Estrutura do projeto
