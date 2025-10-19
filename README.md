@@ -8,14 +8,28 @@ Facilitar a montagem e compartilhamento de listas de vendas de jogos de tabuleir
 
 ## 🚀 Funcionalidades Principais
 
-- ✅ Gerenciamento de coleção pessoal
-- ✅ Importação de coleção (Ludopedia e BoardGameGeek)
-- ✅ Criação de listas de vendas
-- ✅ **Exportação para WhatsApp** ⭐
-- ✅ **Exportação para redes sociais** ⭐
-- ✅ Sistema de limites (free tier)
-- ✅ Busca de jogos
-- ✅ Chat entre comprador e vendedor
+### ✅ Implementado
+- ✅ **Sistema de Autenticação Completo**
+  - Login com usuário/senha
+  - Login com Google OAuth2
+  - Registro de usuários
+  - Seleção de planos (Gratuito, Premium, Pro)
+  - Gerenciamento de estado com Redux
+- ✅ **Interface Moderna**
+  - Design Bootstrap 5
+  - Máscaras de formatação (Telefone e CEP)
+  - Validação de formulários
+  - Responsivo e acessível
+
+### 🚧 Em Desenvolvimento
+- 🔄 Gerenciamento de coleção pessoal
+- 🔄 Importação de coleção (Ludopedia e BoardGameGeek)
+- 🔄 Criação de listas de vendas
+- 🔄 **Exportação para WhatsApp** ⭐
+- 🔄 **Exportação para redes sociais** ⭐
+- 🔄 Sistema de limites por plano
+- 🔄 Busca de jogos
+- 🔄 Chat entre comprador e vendedor
 
 ## 🏗️ Stack Tecnológico
 
@@ -24,11 +38,16 @@ Facilitar a montagem e compartilhamento de listas de vendas de jogos de tabuleir
 - **SQLAlchemy** - ORM
 - **PostgreSQL** - Banco de dados
 - **Redis** - Cache
+- **JWT** - Autenticação
+- **bcrypt** - Hash de senhas
+- **Google OAuth2** - Login social
 
 ### Frontend
-- **React.js** - Interface moderna
+- **React.js** (TypeScript) - Interface moderna
 - **Redux Toolkit** - Gerenciamento de estado
-- **Tailwind CSS** - Design responsivo
+- **Bootstrap 5** - Design responsivo
+- **React Router DOM** - Navegação
+- **Axios** - Requisições HTTP
 
 ### Infraestrutura
 - **Docker** - Containerização
@@ -53,6 +72,7 @@ boardgame-marketplace/
 - Docker e Docker Compose
 - Python 3.11+
 - Node.js 18+
+- Conta Google Cloud (para OAuth)
 
 ### Desenvolvimento
 
@@ -63,12 +83,20 @@ git clone [URL_DO_REPO]
 # Entre no diretório
 cd boardgame-marketplace
 
+# Configure as variáveis de ambiente
+# Copie backend/.env.example para backend/.env
+# Adicione suas credenciais do Google OAuth
+
 # Inicie os containers
 docker-compose up -d
 
 # Backend estará em http://localhost:8000
 # Frontend estará em http://localhost:3000
 ```
+
+### 📝 Configuração do Google OAuth
+
+Consulte o arquivo `backend/GOOGLE_OAUTH_SETUP.md` para instruções detalhadas sobre como configurar o Google OAuth2.
 
 ## 📚 Documentação
 

@@ -8,50 +8,60 @@
 boardgame-marketplace/
 ├── backend/                    # API FastAPI
 │   ├── app/
-│   │   ├── api/               # Endpoints (a criar)
-│   │   ├── models/            # Modelos SQLAlchemy (a criar)
-│   │   ├── schemas/           # Schemas Pydantic (a criar)
+│   │   ├── api/               # Endpoints
+│   │   │   └── auth.py        # ✅ Autenticação (login, registro, Google OAuth)
+│   │   ├── models/            # Modelos SQLAlchemy
+│   │   │   └── user.py        # ✅ Modelo User
+│   │   ├── schemas/           # Schemas Pydantic
+│   │   │   └── auth.py        # ✅ Schemas de autenticação
 │   │   ├── services/          # Serviços de negócio
 │   │   │   └── export_service.py  # ⭐ Exportação para WhatsApp
-│   │   ├── utils/             # Utilitários (a criar)
-│   │   ├── core/              # Configurações (a criar)
-│   │   ├── config.py          # Configurações
-│   │   ├── database.py        # Conexão com banco
-│   │   └── main.py            # App principal
+│   │   ├── utils/             # Utilitários
+│   │   │   └── auth.py        # ✅ JWT, hash de senhas
+│   │   ├── config.py          # ✅ Configurações (Google OAuth, JWT, etc)
+│   │   ├── database.py        # ✅ Conexão com banco
+│   │   └── main.py            # ✅ App principal (CORS configurado)
 │   ├── tests/                 # Testes
-│   ├── requirements.txt       # Dependências Python
+│   ├── requirements.txt       # ✅ Dependências Python
 │   ├── Dockerfile             # Container Docker
-│   └── .env.example           # Exemplo de variáveis
+│   ├── .env.example           # Exemplo de variáveis
+│   └── GOOGLE_OAUTH_SETUP.md  # ✅ Guia de configuração OAuth
 ├── frontend/                   # React App
 │   ├── src/
-│   │   ├── components/        # Componentes React (a criar)
-│   │   ├── pages/             # Páginas (a criar)
+│   │   ├── components/        # Componentes React
+│   │   ├── pages/             # Páginas
+│   │   │   ├── Home.tsx       # ✅ Página inicial
+│   │   │   ├── Login.tsx      # ✅ Página de login
+│   │   │   ├── Register.tsx   # ✅ Página de registro
+│   │   │   └── GoogleCallback.tsx  # ✅ Callback Google OAuth
 │   │   ├── services/          # Serviços
-│   │   │   └── api.ts         # Cliente HTTP
+│   │   │   └── api.ts         # ✅ Cliente HTTP (Axios)
 │   │   ├── store/             # Redux Store
-│   │   │   └── index.ts       # Configuração Redux
-│   │   ├── hooks/             # Custom hooks (a criar)
-│   │   ├── utils/             # Utilitários (a criar)
-│   │   ├── types/             # TypeScript types (a criar)
-│   │   ├── App.tsx            # Componente principal
-│   │   ├── main.tsx           # Entry point
-│   │   └── index.css          # Estilos Tailwind
+│   │   │   ├── index.ts       # ✅ Configuração Redux
+│   │   │   └── slices/
+│   │   │       └── authSlice.ts  # ✅ Slice de autenticação
+│   │   ├── hooks/             # Custom hooks
+│   │   │   └── useAuth.ts     # ✅ Hook de autenticação
+│   │   ├── types/             # TypeScript types
+│   │   │   └── user.ts        # ✅ Tipos de usuário
+│   │   ├── App.tsx            # ✅ Componente principal (rotas)
+│   │   └── main.tsx           # ✅ Entry point (Bootstrap importado)
 │   ├── public/                # Arquivos estáticos
-│   ├── package.json           # Dependências Node
+│   ├── package.json           # ✅ Dependências Node
 │   ├── Dockerfile             # Container Docker
 │   ├── vite.config.ts         # Configuração Vite
-│   ├── tailwind.config.js     # Configuração Tailwind
 │   └── tsconfig.json          # Configuração TypeScript
 ├── docs/                       # Documentação
 │   ├── INICIO_RAPIDO.md       # Como começar
 │   ├── ROADMAP.md             # Roadmap de desenvolvimento
 │   ├── EXPORTACAO_WHATSAPP.md # ⭐ Doc exportação
 │   └── GIT_SETUP.md           # Setup do Git
-├── docker-compose.yml          # Orquestração Docker
+├── docker-compose.yml          # ✅ Orquestração Docker
 ├── .gitignore                  # Arquivos ignorados
-├── README.md                   # Documentação principal
-├── RESUMO_PROJETO.md          # Este arquivo
-└── SISTEMA_PLANEJAMENTO_ATUALIZADO.md  # Planejamento
+├── README.md                   # ✅ Documentação principal (atualizado)
+├── RESUMO_PROJETO.md          # ✅ Este arquivo (atualizado)
+├── COMECE_AQUI.md             # Guia de início
+└── GUIA_VISUAL.md             # Guia visual
 ```
 
 ### 📚 Documentação Criada
@@ -105,9 +115,25 @@ boardgame-marketplace/
    - Workflow recomendado
    - Convenções de commit
 
-### 🎯 Funcionalidade Principal Implementada
+### 🎯 Funcionalidades Implementadas
 
-**Exportação para WhatsApp** ⭐
+#### 1. **Sistema de Autenticação Completo** ✅
+- Login com usuário/senha (JWT)
+- Login com Google OAuth2
+- Registro de usuários
+- Seleção de planos (Gratuito, Premium, Pro)
+- Gerenciamento de estado com Redux
+- Validação de formulários
+- Hash de senhas com bcrypt
+
+#### 2. **Interface Moderna** ✅
+- Design Bootstrap 5
+- Máscaras de formatação (Telefone: (##) #####-####, CEP: #####-###)
+- Validação de erros amigável
+- Responsivo e acessível
+- Logo "Ludo Venda" clicável
+
+#### 3. **Exportação para WhatsApp** ⭐
 - Serviço completo de exportação
 - Suporte a múltiplos formatos (WhatsApp, Instagram, Facebook, Email)
 - Geração de QR Code
@@ -148,13 +174,15 @@ curl http://localhost:8000/health
 
 ### 3. Desenvolvimento MVP (Próximas 2 semanas)
 
-#### Sprint 1: Autenticação
-- [ ] Criar modelo User
-- [ ] Implementar JWT
-- [ ] Endpoints de login/registro
-- [ ] Páginas de login/registro
+#### Sprint 1: Autenticação ✅ CONCLUÍDO
+- [x] Criar modelo User
+- [x] Implementar JWT
+- [x] Endpoints de login/registro
+- [x] Páginas de login/registro
+- [x] Login com Google OAuth2
+- [x] Seleção de planos
 
-#### Sprint 2: Coleção
+#### Sprint 2: Coleção (Próximo)
 - [ ] Criar modelo Collection
 - [ ] CRUD de coleção
 - [ ] Importação Ludopedia
@@ -181,15 +209,26 @@ curl http://localhost:8000/health
 - [x] Docker Compose
 - [x] Backend básico
 - [x] Frontend básico
-- [x] Serviço de exportação
+- [x] **Sistema de Autenticação Completo**
+  - [x] Modelo User com campos completos (username, email, full_name, phone, cep, role)
+  - [x] JWT para autenticação
+  - [x] Hash de senhas com bcrypt
+  - [x] Login com Google OAuth2
+  - [x] Endpoints de autenticação
+  - [x] Páginas de login e registro
+  - [x] Redux para gerenciamento de estado
+  - [x] Máscaras de formatação (telefone e CEP)
+  - [x] Validação de formulários
+  - [x] Design Bootstrap 5
+- [x] Serviço de exportação (backend)
 - [x] Documentação
 
 ### 🔄 Em Progresso
-- [ ] Autenticação
 - [ ] Coleção de jogos
 - [ ] Listas de vendas
 
 ### ⏳ Planejado
+- [ ] Integração da exportação (frontend)
 - [ ] Sistema de ofertas
 - [ ] Avaliações
 - [ ] Pagamentos
@@ -261,5 +300,7 @@ O projeto está **bem estruturado** e **pronto para desenvolvimento**. A funcion
 
 **Desenvolvido com ❤️ para a comunidade de jogos de tabuleiro**
 
-**Data**: 18/10/2025
+**Última atualização**: 19/10/2025
+
+**Status**: Sprint 1 (Autenticação) ✅ CONCLUÍDO
 
