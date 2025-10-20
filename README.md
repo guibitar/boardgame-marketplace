@@ -20,10 +20,17 @@ Facilitar a montagem e compartilhamento de listas de vendas de jogos de tabuleir
   - Máscaras de formatação (Telefone e CEP)
   - Validação de formulários
   - Responsivo e acessível
+- ✅ **Sistema de Coleção de Jogos**
+  - CRUD completo de jogos
+  - Importação da Ludopedia (OAuth 2.0)
+  - Importação do BoardGameGeek
+  - Identificação automática de BASE vs EXPANSION
+  - Ordenação e filtros
+  - Visualização em cards ou lista
+  - Modal de progresso durante sincronização
+  - Campos completos (rating, weight, ranking_position, purchase_price)
 
 ### 🚧 Em Desenvolvimento
-- 🔄 Gerenciamento de coleção pessoal
-- 🔄 Importação de coleção (Ludopedia e BoardGameGeek)
 - 🔄 Criação de listas de vendas
 - 🔄 **Exportação para WhatsApp** ⭐
 - 🔄 **Exportação para redes sociais** ⭐

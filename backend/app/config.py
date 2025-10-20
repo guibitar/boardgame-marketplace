@@ -29,6 +29,11 @@ class Settings(BaseSettings):
     LUDOPEDIA_API_KEY: Optional[str] = None
     BGG_API_KEY: Optional[str] = None
     
+    # Ludopedia OAuth
+    LUDOPEDIA_APP_ID: Optional[str] = None
+    LUDOPEDIA_APP_KEY: Optional[str] = None
+    LUDOPEDIA_REDIRECT_URI: str = "http://localhost:3000/auth/ludopedia/callback"
+    
     # Google OAuth
     GOOGLE_CLIENT_ID: Optional[str] = None
     GOOGLE_CLIENT_SECRET: Optional[str] = None

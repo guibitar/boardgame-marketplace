@@ -33,12 +33,15 @@ class User(Base):
     google_id = Column(String, nullable=True, unique=True)
     picture_url = Column(String, nullable=True)
     
+    # Ludopedia OAuth
+    ludopedia_access_token = Column(String, nullable=True)
+    
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), nullable=True)
     last_login = Column(DateTime(timezone=True), nullable=True)
     
-    # Relacionamentos (a criar)
-    # collections = relationship("Collection", back_populates="owner")
+    # Relacionamentos
+    games = relationship("Game", back_populates="owner", cascade="all, delete-orphan")
     # sale_lists = relationship("SaleList", back_populates="seller")
 

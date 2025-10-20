@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import GoogleCallback from './pages/GoogleCallback'
+import LudopediaCallback from './pages/LudopediaCallback'
+import MyCollection from './pages/MyCollection'
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/auth/google/callback" element={<GoogleCallback />} />
-        <Route path="/collections" element={<div>Coleções - Em desenvolvimento</div>} />
+        <Route path="/auth/ludopedia/callback" element={<LudopediaCallback />} />
+        <Route path="/collection" element={<MyCollection />} />
         <Route path="/sale-lists" element={<div>Listas de Vendas - Em desenvolvimento</div>} />
       </Routes>
     </Provider>

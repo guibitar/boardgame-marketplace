@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.database import engine, Base
 
+# Import models to register them with SQLAlchemy
+from app.models import User, Game
+
 # Create tables
 Base.metadata.create_all(bind=engine)
 
@@ -38,15 +41,16 @@ async def health_check():
 
 
 # Import routers
-from app.api import auth
+from app.api import auth, collection, ludopedia_auth
 
 # Include routers
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+app.include_router(collection.router, prefix="/api/collection", tags=["collection"])
+app.include_router(ludopedia_auth.router, prefix="/api/ludopedia", tags=["ludopedia"])
 
 # To be created:
-# from app.api import users, collections, sale_lists, orders
+# from app.api import users, sale_lists, orders
 # app.include_router(users.router, prefix="/api/users", tags=["users"])
-# app.include_router(collections.router, prefix="/api/collections", tags=["collections"])
 # app.include_router(sale_lists.router, prefix="/api/sale-lists", tags=["sale-lists"])
 # app.include_router(orders.router, prefix="/api/orders", tags=["orders"])
 

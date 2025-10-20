@@ -7,6 +7,13 @@ from app.schemas.auth import (
     TokenData,
     LoginRequest,
 )
+from app.schemas.game import (
+    GameBase,
+    GameCreate,
+    GameUpdate,
+    GameResponse,
+    UserCollectionResponse,
+)
 
 __all__ = [
     "UserBase",
@@ -16,5 +23,10 @@ __all__ = [
     "Token",
     "TokenData",
     "LoginRequest",
+    "GameBase",
+    "GameCreate",
+    "GameUpdate",
+    "GameResponse",
+    "UserCollectionResponse",
 ]
 

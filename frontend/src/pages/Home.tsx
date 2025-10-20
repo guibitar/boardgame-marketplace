@@ -26,7 +26,7 @@ export default function Home() {
                       {user?.role === 'pro' && 'Pro'}
                     </span>
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/collections">Coleções</Nav.Link>
+                  <Nav.Link as={Link} to="/collection">Minha Coleção</Nav.Link>
                   <Nav.Link as={Link} to="/sale-lists">Listas</Nav.Link>
                   <Button variant="outline-secondary" size="sm" onClick={logout} className="ms-2">
                     Sair
@@ -70,17 +70,31 @@ export default function Home() {
         {/* Features */}
         <Row className="g-4 mb-5">
           <Col md={4}>
-            <Card className="h-100 shadow-sm">
-              <Card.Body>
-                <div className="text-center mb-3">
-                  <span className="display-4">📦</span>
-                </div>
-                <h5 className="text-center mb-3">Gerencie sua Coleção</h5>
-                <p className="text-center text-muted">
-                  Importe seus jogos da Ludopedia ou BoardGameGeek e mantenha tudo organizado
-                </p>
-              </Card.Body>
-            </Card>
+            {isAuthenticated ? (
+              <Card as={Link} to="/collection" className="h-100 shadow-sm text-decoration-none" style={{ cursor: 'pointer', transition: 'transform 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                <Card.Body>
+                  <div className="text-center mb-3">
+                    <span className="display-4">📦</span>
+                  </div>
+                  <h5 className="text-center mb-3">Gerencie sua Coleção</h5>
+                  <p className="text-center text-muted">
+                    Importe seus jogos da Ludopedia ou BoardGameGeek e mantenha tudo organizado
+                  </p>
+                </Card.Body>
+              </Card>
+            ) : (
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <div className="text-center mb-3">
+                    <span className="display-4">📦</span>
+                  </div>
+                  <h5 className="text-center mb-3">Gerencie sua Coleção</h5>
+                  <p className="text-center text-muted">
+                    Importe seus jogos da Ludopedia ou BoardGameGeek e mantenha tudo organizado
+                  </p>
+                </Card.Body>
+              </Card>
+            )}
           </Col>
 
           <Col md={4}>

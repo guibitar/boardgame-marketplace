@@ -133,7 +133,20 @@ boardgame-marketplace/
 - Responsivo e acessível
 - Logo "Ludo Venda" clicável
 
-#### 3. **Exportação para WhatsApp** ⭐
+#### 3. **Sistema de Coleção de Jogos** ✅
+- Modelo Game (single collection per user)
+- CRUD completo de jogos
+- Importação da Ludopedia (OAuth 2.0)
+- Importação do BoardGameGeek
+- Identificação automática de BASE vs EXPANSION
+- Ordenação por múltiplos campos (nome, ano, preço, avaliação, complexidade, ranking)
+- Filtros (todos, apenas base, apenas expansões)
+- Visualização em cards ou lista
+- Modal de progresso durante sincronização
+- Campos completos: rating, weight, ranking_position, purchase_price
+- Sincronização inteligente (adiciona novos, atualiza existentes, remove excluídos)
+
+#### 4. **Exportação para WhatsApp** ⭐
 - Serviço completo de exportação
 - Suporte a múltiplos formatos (WhatsApp, Instagram, Facebook, Email)
 - Geração de QR Code
@@ -182,12 +195,16 @@ curl http://localhost:8000/health
 - [x] Login com Google OAuth2
 - [x] Seleção de planos
 
-#### Sprint 2: Coleção (Próximo)
-- [ ] Criar modelo Collection
-- [ ] CRUD de coleção
-- [ ] Importação Ludopedia
-- [ ] Importação BGG
-- [ ] Página de coleção
+#### Sprint 2: Coleção ✅ CONCLUÍDO
+- [x] Criar modelo Game (single collection per user)
+- [x] CRUD de coleção
+- [x] Importação Ludopedia (OAuth 2.0)
+- [x] Importação BGG
+- [x] Página de coleção (MyCollection)
+- [x] Identificação BASE vs EXPANSION
+- [x] Ordenação e filtros
+- [x] Modal de progresso
+- [x] Campos adicionais (rating, weight, ranking_position)
 
 #### Sprint 3: Listas de Vendas
 - [ ] Criar modelo SaleList
@@ -224,11 +241,10 @@ curl http://localhost:8000/health
 - [x] Documentação
 
 ### 🔄 Em Progresso
-- [ ] Coleção de jogos
 - [ ] Listas de vendas
+- [ ] Integração da exportação (frontend)
 
 ### ⏳ Planejado
-- [ ] Integração da exportação (frontend)
 - [ ] Sistema de ofertas
 - [ ] Avaliações
 - [ ] Pagamentos
@@ -300,7 +316,7 @@ O projeto está **bem estruturado** e **pronto para desenvolvimento**. A funcion
 
 **Desenvolvido com ❤️ para a comunidade de jogos de tabuleiro**
 
-**Última atualização**: 19/10/2025
+**Última atualização**: 20/10/2025
 
-**Status**: Sprint 1 (Autenticação) ✅ CONCLUÍDO
+**Status**: Sprint 2 (Coleção) ✅ CONCLUÍDO
 
